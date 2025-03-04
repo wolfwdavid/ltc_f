@@ -1,162 +1,108 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forum</title>
+    <title>LTChat Login</title>
     <style>
-        :root {
-            --bg-color: #fff;
-            --text-color: black;
-            --nav-bg-color: black;
-            --nav-text-color: white;
-            --border-color: magenta;
-        }
-        
-        .dark-mode {
-            --bg-color: #121212;
-            --text-color: #fff;
-            --nav-bg-color: #333;
-            --nav-text-color: #fff;
-            --border-color: cyan;
-        }
-        
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-        .navbar {
+            margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: space-between;
+            height: 100vh;
+            background-color: #E9E9E9;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            margin: auto;
+            background: #E9E9E9;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .left-panel {
+            width: 40%;
+            background-color: #E9E9E9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            background: var(--nav-bg-color);
-            padding: 15px;
-            color: var(--nav-text-color);
-        }
-        .navbar div {
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .nav-links {
-            display: flex;
-        }
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 15px;
-            background: var(--bg-color);
-            border: 1px solid var(--text-color);
-        }
-        .content {
-            border-top: 3px solid var(--border-color);
             padding: 20px;
         }
-        .post-section {
-            padding: 15px;
-            border-bottom: 2px solid var(--border-color);
+        .right-panel {
+            width: 60%;
+            padding: 50px;
         }
-        .post-section textarea {
-            width: 100%;
-            height: 80px;
-            padding: 10px;
-            font-size: 14px;
-        }
-        .post-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .post-buttons button {
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .post-button {
-            background-color: orange;
-            color: white;
-        }
-        .attach-button {
-            background-color: grey;
-            color: white;
-        }
-        .feed {
-            font-size: 20px;
+        h1 {
+            font-size: 32px;
             font-weight: bold;
+            text-align: center;
         }
-        .feed-container {
-            display: flex;
-            align-items: center;
-            border-top: 2px solid var(--text-color);
+        input {
+            width: 80%;
             padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .feed img {
-            width: 100px;
-            height: 100px;
-            margin-right: 15px;
-        }
-        .feed-text {
-            max-width: 600px;
-        }
-        .feed-text h3 {
-            margin: 0;
-        }
-        .feed-text p {
-            margin: 5px 0;
-        }
-        .feed-text a {
-            color: red;
-            text-decoration: none;
-        }
-        .mode-toggle {
-            cursor: pointer;
-            background: none;
+        button {
+            width: 85%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #17CC72;
+            color: white;
             border: none;
-            color: var(--nav-text-color);
+            border-radius: 5px;
+            cursor: pointer;
             font-size: 16px;
-            margin-left: 20px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .signup {
+            margin-top: 10px;
+            color: #007bff;
+            cursor: pointer;
+        }
+        .signup:hover {
+            text-decoration: underline;
+        }
+        .description {
+            font-size: 16px;
+            color: #555;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .image-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        img {
+            width: 80%;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div class="navbar">
-        <div>forum</div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Marketplace</a>
-            <a href="#">Profile</a>
-            <a href="#">Settings</a>
-            <button class="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
+    <div class="container">
+        <div class="left-panel">
+            <h1>LTChat</h1>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <button>LOG IN</button>
+            <button>DON'T HAVE AN ACCOUNT? SIGN UP!</button>
         </div>
-    </div>
-    <div class="content">
-        <div class="post-section">
-            <h3>Add Post</h3>
-            <textarea placeholder="type here..."></textarea>
-            <div class="post-buttons">
-                <button class="post-button">POST</button>
-                <button class="attach-button">add image</button>
-                <button class="attach-button">add link</button>
-            </div>
-        </div>
-        <p class="feed">FEED</p>
-        <p>Based on your most recent activity:</p>
-        <div class="feed-container">
-            <img src="logo.png" alt="Level the Curve Logo">
-            <div class="feed-text">
-                <h3>Eating Tool</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
-                <a href="#">click for more...</a>
+
+        <div class="right-panel">
+            <h1>WHAT IS LTChat?</h1>
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="image-container">
+                <img src="123.png" alt="LTChat Team">
             </div>
         </div>
     </div>
-    <script>
-        function toggleMode() {
-            document.body.classList.toggle('dark-mode');
-        }
-    </script>
 </body>
 </html>
