@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LTC Test Forum</title>
+    <title>LTC Forum</title>
     <style>
         :root {
             --bg-color: #fff;
             --text-color: black;
             --nav-bg-color: black;
             --nav-text-color: white;
-            --border-color: magenta;
+            --button-bg: green;
+            --button-text: white;
+            --border-color: lightgray;
         }
         
         .dark-mode {
@@ -18,7 +20,8 @@
             --text-color: #fff;
             --nav-bg-color: #333;
             --nav-text-color: #fff;
-            --border-color: cyan;
+            --button-bg: cyan;
+            --border-color: gray;
         }
         
         body {
@@ -27,12 +30,14 @@
             background-color: var(--bg-color);
             color: var(--text-color);
         }
+
+        /* Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: var(--nav-bg-color);
-            padding: 15px;
+            padding: 15px 20px;
             color: var(--nav-text-color);
         }
         .navbar div {
@@ -41,20 +46,18 @@
         }
         .nav-links {
             display: flex;
+            gap: 15px;
         }
         .nav-links a {
-            color: var(--text-color);
+            color: var(--nav-text-color);
             text-decoration: none;
-            padding: 15px;
-            background: var(--bg-color);
-            border: 1px solid var(--text-color);
+            padding: 10px;
         }
-        .content {
-            border-top: 3px solid var(--border-color);
-            padding: 20px;
-        }
+
+        /* Post Section */
         .post-section {
-            padding: 15px;
+            background: var(--bg-color);
+            padding: 20px;
             border-bottom: 2px solid var(--border-color);
         }
         .post-section textarea {
@@ -62,54 +65,88 @@
             height: 80px;
             padding: 10px;
             font-size: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
         }
         .post-buttons {
             display: flex;
             gap: 10px;
             margin-top: 10px;
         }
-        .post-buttons button {
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-        }
         .post-button {
-            background-color: orange;
-            color: white;
+            background-color: var(--button-bg);
+            color: var(--button-text);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
         }
         .attach-button {
-            background-color: grey;
+            background-color: gray;
             color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
+
+        /* Feed Section */
         .feed {
             font-size: 20px;
             font-weight: bold;
+            padding: 15px;
         }
         .feed-container {
             display: flex;
             align-items: center;
-            border-top: 2px solid var(--text-color);
-            padding: 10px;
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
         }
         .feed img {
             width: 100px;
             height: 100px;
             margin-right: 15px;
+            border-radius: 5px;
         }
         .feed-text {
             max-width: 600px;
         }
         .feed-text h3 {
             margin: 0;
+            font-size: 18px;
         }
         .feed-text p {
             margin: 5px 0;
         }
         .feed-text a {
-            color: red;
+            color: blue;
             text-decoration: none;
         }
+        .feed-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Replies Section */
+        .replies-container {
+            padding: 15px;
+            border-top: 2px solid var(--border-color);
+        }
+        .reply {
+            background: var(--bg-color);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+        }
+        .reply strong {
+            color: var(--text-color);
+        }
+        .reply p {
+            margin: 5px 0;
+        }
+
+        /* Mode Toggle */
         .mode-toggle {
             cursor: pointer;
             background: none;
@@ -121,8 +158,9 @@
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <div class="navbar">
-        <div>forum</div>
+        <div>LTChat</div>
         <div class="nav-links">
             <a href="#">Home</a>
             <a href="#">About Us</a>
@@ -132,27 +170,55 @@
             <button class="mode-toggle" onclick="toggleMode()">Toggle Mode</button>
         </div>
     </div>
-    <div class="content">
-        <div class="post-section">
-            <h3>Add Post</h3>
-            <textarea placeholder="type here..."></textarea>
-            <div class="post-buttons">
-                <button class="post-button">POST</button>
-                <button class="attach-button">add image</button>
-                <button class="attach-button">add link</button>
-            </div>
-        </div>
-        <p class="feed">FEED</p>
-        <p>Based on your most recent activity:</p>
-        <div class="feed-container">
-            <img src="logo.png" alt="Level the Curve Logo">
-            <div class="feed-text">
-                <h3>Eating Tool</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
-                <a href="#">click for more...</a>
-            </div>
+
+    <!-- Post Section -->
+    <div class="post-section">
+        <h3>Add Post</h3>
+        <textarea placeholder="Type here..."></textarea>
+        <div class="post-buttons">
+            <button class="post-button">POST</button>
+            <button class="attach-button">Add Image</button>
+            <button class="attach-button">Add Link</button>
         </div>
     </div>
+
+    <!-- Feed Section -->
+    <p class="feed">FEED</p>
+    <p style="padding-left: 15px;">Based on your most recent activity:</p>
+    
+    <div class="feed-container">
+        <img src="image-placeholder.png" alt="Level the Curve Logo">
+        <div class="feed-text">
+            <h3>Eating Tool</h3>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
+            <a href="#">Go to Thread</a>
+        </div>
+    </div>
+
+    <div class="feed-container">
+        <strong>stizzard47</strong>
+        <div class="feed-text">
+            <h3>I need a tool for eating</h3>
+            <p>I have a physical ailment in my finger and I need something to eat my food with...</p>
+            <a href="#">Go to Thread</a> | <a href="#">Reply</a> | <a href="#">Save</a>
+        </div>
+    </div>
+
+    <!-- Replies Section -->
+    <div class="replies-container">
+        <h3>Replies</h3>
+        <div class="reply">
+            <strong>jonn12334</strong>
+            <p>I'm dealing with the same problem! I think the NYU Ability Project might have some eating tools!</p>
+            <a href="#">Reply</a>
+        </div>
+        <div class="reply">
+            <strong>Level the Curve</strong>
+            <p>Hey stizzard47! We sell <strong>eating tools that are used for people with physical disabilities.</strong> Hope it is of interest!</p>
+            <a href="#">Reply</a>
+        </div>
+    </div>
+
     <script>
         function toggleMode() {
             document.body.classList.toggle('dark-mode');
@@ -160,4 +226,3 @@
     </script>
 </body>
 </html>
-
