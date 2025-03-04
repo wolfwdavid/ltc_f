@@ -47,8 +47,14 @@
             transform: translateY(-20px);
             opacity: 0;
         }
-        input {
+        .input-container {
             width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input {
+            width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
@@ -59,6 +65,17 @@
         input:focus {
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             border-color: #17CC72;
+        }
+        .password-container {
+            position: relative;
+            width: 100%;
+        }
+        .password-container span {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
         }
         button {
             width: 85%;
@@ -76,34 +93,6 @@
             background-color: #218838;
             transform: scale(1.05);
         }
-        .signup {
-            margin-top: 10px;
-            color: #007bff;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-        .signup:hover {
-            text-decoration: underline;
-            opacity: 0.7;
-        }
-        .description {
-            font-size: 16px;
-            color: #555;
-            margin-top: 20px;
-            text-align: center;
-            transform: translateY(20px);
-            opacity: 0;
-        }
-        .image-container {
-            margin-top: 20px;
-            text-align: center;
-            transform: scale(0.8);
-            opacity: 0;
-        }
-        img {
-            width: 80%;
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
@@ -111,13 +100,12 @@
         <!-- Left Panel -->
         <div class="left-panel">
             <h1>LTC</h1>
-            <input type="text" placeholder="Username">
-            <div style="position: relative; width: 80%;">
-                <input type="password" id="password" placeholder="Password" style="width: 100%; padding-right: 40px;">
-                <span onclick="togglePassword()" 
-                      style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
-                    👁️
-                </span>
+            <div class="input-container">
+                <input type="text" placeholder="Username">
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Password">
+                    <span onclick="togglePassword()">👁️</span>
+                </div>
             </div>
             <button>LOG IN</button>
             <button>DON'T HAVE AN ACCOUNT? SIGN UP!</button>
@@ -126,22 +114,8 @@
         <!-- Right Panel -->
         <div class="right-panel">
             <h1>WHAT IS LTC?</h1>
-            <p class="description">
-                Level The Curve is a company dedicated to enhancing daily life by developing affordable, adaptive products tailored to individual needs. Their mission focuses on "Access. Independence. Dignity." 
-                
-                <br><br>
-                <strong>Key Features:</strong>
-                <ul>
-                    <li><strong>Product Line – EZ Adapt:</strong> This collection offers devices that assist with Activities of Daily Living (ADLs), promoting greater independence. <a href="https://www.levelthecurve.com" target="_blank">Learn More</a></li>
-                    <li><strong>Consultation Services:</strong> They assist individuals in developing product ideas, ensuring creators retain rights while Level The Curve receives royalties. <a href="https://www.levelthecurve.com" target="_blank">Learn More</a></li>
-                    <li><strong>Community Engagement:</strong> The company offers various classes suitable for all ages and mobility levels, including upper body workouts, boxing, dance, and yoga. <a href="https://www.facebook.com/levelthecurve" target="_blank">Visit Facebook</a></li>
-                </ul>
-                <br>
-                Overall, Level The Curve is committed to creating products and services that adapt to customers' needs, aiming to level the playing field for the disabled community. <a href="https://www.levelthecurve.com" target="_blank">Learn More</a>
+            <p class="description">Level The Curve is a company dedicated to enhancing daily life by developing affordable, adaptive products tailored to individual needs. Their mission focuses on "Access. Independence. Dignity." 
             </p>
-            <div class="image-container">
-                <img src="img/123.png" alt="LTC Chat Team">
-            </div>
         </div>
     </div>
 
@@ -154,8 +128,6 @@
         gsap.to(".left-panel", { opacity: 1, x: 0, duration: 1, delay: 0.5 });
         gsap.to(".right-panel", { opacity: 1, x: 0, duration: 1, delay: 0.5 });
         gsap.to("h1", { opacity: 1, y: 0, duration: 1, delay: 1 });
-        gsap.to(".description", { opacity: 1, y: 0, duration: 1, delay: 1.2 });
-        gsap.to(".image-container", { opacity: 1, scale: 1, duration: 1, delay: 1.5 });
     </script>
 </body>
 </html>
