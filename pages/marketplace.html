@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace - LTC Forum</title>
+    <style>
+        :root {
+            --bg-color: #fff;
+            --text-color: black;
+            --nav-bg-color: black;
+            --nav-text-color: white;
+            --button-bg: green;
+            --button-text: white;
+            --border-color: lightgray;
+        }
+        
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #fff;
+            --nav-bg-color: #333;
+            --nav-text-color: #fff;
+            --button-bg: cyan;
+            --border-color: gray;
+        }
+        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--nav-bg-color);
+            padding: 15px 20px;
+            color: var(--nav-text-color);
+        }
+        .navbar div {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+        }
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 15px 20px;
+            background: var(--bg-color);
+            border: 1px solid var(--text-color);
+        }
+        .nav-links a.active {
+            background: black;
+            color: white;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        /* Vendor Section */
+        .vendor {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .vendor img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        /* Product Card */
+        .product-card {
+            display: flex;
+            align-items: center;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            max-width: 700px;
+        }
+        .product-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        .product-details {
+            flex-grow: 1;
+        }
+        .product-details h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .product-details p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Price and Button */
+        .price-button {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .buy-button {
+            background: var(--button-bg);
+            color: var(--button-text);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div>LTChat</div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="aboutus.html">About Us</a>
+            <a href="marketplace.html" class="active">Marketplace</a>
+            <a href="profile.html">Profile</a>
+            <a href="settings.html">Settings</a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="title">MARKETPLACE</div>
+        
+        <p><strong>Vendors</strong></p>
+        <div class="vendor">
+            <img src="vendor-logo.png" alt="Level the Curve Logo">
+            <span>Level the Curve</span>
+        </div>
+
+        <!-- Product Card -->
+        <div class="product-card">
+            <img src="product-image.png" alt="Vesta Eating Utensil Holder">
+            <div class="product-details">
+                <h3>Vesta Eating Utensil Holder</h3>
+                <p>(Large, fits most thick silverware & plastics) Our eating tool enables individuals with limited dexterity to independently use multiple utensils without any assistance. The ergonomic design makes it comfortable to use and its sleek profile will let you flaunt it proudly.</p>
+                <div class="price-button">
+                    <span class="price">$20</span>
+                    <button class="buy-button" onclick="location.href='product-page.html'">Go to product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
