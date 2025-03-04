@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding - Step 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        .success-banner {
+            background: green;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .checkbox-group {
+            text-align: left;
+            max-height: 150px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .next-btn {
+            background-color: blue;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-banner">
+            SUCCESS! YOU HAVE OFFICIALLY SIGNED UP FOR FORUM!
+        </div>
+        <h1>Welcome to Forum!</h1>
+        <p><strong>Which medical complications are you dealing with/interested in learning more about?</strong> (Select all that apply)</p>
+        
+        <input type="text" placeholder="Search" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        
+        <div class="checkbox-group">
+            <label><input type="checkbox"> Brain Damage</label><br>
+            <label><input type="checkbox"> Paralysis</label><br>
+            <label><input type="checkbox"> Tendon Injury</label><br>
+            <label><input type="checkbox"> Sclerosis</label><br>
+            <label><input type="checkbox"> Back Pain</label><br>
+        </div>
+        <button class="next-btn" onclick="location.href='home.html'">Next</button>
+    </div>
+</body>
+</html>

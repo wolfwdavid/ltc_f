@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onboarding - Step 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        .chatroom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .join-btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .joined {
+            background-color: green;
+            color: white;
+        }
+        .not-joined {
+            background-color: grey;
+            color: white;
+        }
+        .next-btn {
+            background-color: blue;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Forum!</h1>
+        <p><strong>Here are some suggested [subreddits/chatrooms] you can join based on your interests:</strong></p>
+        
+        <div class="chatroom">
+            <span>/f/level the curve</span>
+            <button class="join-btn joined">JOINED</button>
+        </div>
+        <div class="chatroom">
+            <span>/f/finger mobility</span>
+            <button class="join-btn not-joined" onclick="toggleJoin(this)">JOIN</button>
+        </div>
+        <div class="chatroom">
+            <span>/f/back pain</span>
+            <button class="join-btn not-joined" onclick="toggleJoin(this)">JOIN</button>
+        </div>
+        <div class="chatroom">
+            <span>/f/anxiety</span>
+            <button class="join-btn not-joined" onclick="toggleJoin(this)">JOIN</button>
+        </div>
+
+        <button class="next-btn" onclick="location.href='onboarding-step3.html'">Next</button>
+    </div>
+
+    <script>
+        function toggleJoin(button) {
+            if (button.classList.contains("not-joined")) {
+                button.classList.remove("not-joined");
+                button.classList.add("joined");
+                button.textContent = "JOINED";
+            } else {
+                button.classList.remove("joined");
+                button.classList.add("not-joined");
+                button.textContent = "JOIN";
+            }
+        }
+    </script>
+</body>
+</html>
+
