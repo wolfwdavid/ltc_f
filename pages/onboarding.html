@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Forum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+        }
+        h1 {
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+        }
+        .setting {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .setting label {
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .toggle-button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .on {
+            background-color: green;
+            color: white;
+        }
+        .off {
+            background-color: grey;
+            color: white;
+        }
+        .next-btn {
+            background-color: blue;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Forum!</h1>
+        <p>WOULD YOU LIKE TO TURN ON ANY SETTINGS. YOU MAY ADJUST YOUR SELECTIONS IN THE PROFILE SECTION LATER.</p>
+
+        <div class="setting">
+            <label>dark mode</label>
+            <button class="toggle-button on" onclick="toggleSetting(this)">TURN OFF</button>
+        </div>
+        <div class="setting">
+            <label>text to speech</label>
+            <button class="toggle-button off" onclick="toggleSetting(this)">TURN ON</button>
+        </div>
+        <div class="setting">
+            <label>speech to text</label>
+            <button class="toggle-button off" onclick="toggleSetting(this)">TURN ON</button>
+        </div>
+
+        <button class="next-btn">NEXT</button>
+    </div>
+
+    <script>
+        function toggleSetting(button) {
+            if (button.classList.contains("on")) {
+                button.classList.remove("on");
+                button.classList.add("off");
+                button.textContent = "TURN ON";
+            } else {
+                button.classList.remove("off");
+                button.classList.add("on");
+                button.textContent = "TURN OFF";
+            }
+        }
+    </script>
+</body>
+</html>
