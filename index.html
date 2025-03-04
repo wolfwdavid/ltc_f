@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LTC Chat Login</title>
+    <title>LTC Login</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
         body {
@@ -112,7 +112,13 @@
         <div class="left-panel">
             <h1>LTC</h1>
             <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
+            <div style="position: relative; width: 80%;">
+                <input type="password" id="password" placeholder="Password" style="width: 100%; padding-right: 40px;">
+                <span onclick="togglePassword()" 
+                      style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                    👁️
+                </span>
+            </div>
             <button>LOG IN</button>
             <button>DON'T HAVE AN ACCOUNT? SIGN UP!</button>
         </div>
@@ -140,7 +146,10 @@
     </div>
 
     <script>
-        // GSAP Animations
+        function togglePassword() {
+            let passwordField = document.getElementById("password");
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
+        }
         gsap.to("body", { opacity: 1, duration: 1 });
         gsap.to(".left-panel", { opacity: 1, x: 0, duration: 1, delay: 0.5 });
         gsap.to(".right-panel", { opacity: 1, x: 0, duration: 1, delay: 0.5 });
